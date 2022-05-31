@@ -1,0 +1,34 @@
+[package]
+license = "Murtaza Ali Imtiaz"
+publish = false
+name = "payments-engine"
+version = "0.1.0"
+rust-version = "1.58.1"
+edition = "2021"
+description = """\
+A simple toy payments engine that reads a series of transactions from a CSV, \
+updates client accounts, handles disputes and chargebacks, and then outputs the state of clients accounts as a CSV.\
+"""
+readme = "README.md"
+keywords = ["toy", "payments", "engune", "csv", "transactions"]
+authors = ["Murtaza Ali Imtiaz <murtazalimtiaz@gmail.com>"]
+
+[profile.dev]
+split-debuginfo = "unpacked"
+
+[profile.release]
+lto = "thin"
+overflow-checks = true
+
+[dependencies]
+clap = { version = "3.0.14", features = ["cargo"] }
+csv = "1.1.6"
+hashbrown = "0.12.0"
+lazy_static = "1.4.0"
+quick-error = "2.0.1"
+serde = { version = "1.0.136", features = ["derive"] }
+tinyset = "0.4.9"
+
+[dev-dependencies]
+assert_cmd = "2.0.4"
+predicates = "2.1.1"

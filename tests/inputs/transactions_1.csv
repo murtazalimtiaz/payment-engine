@@ -1,0 +1,8 @@
+type,client," tx",    amount
+deposit, 326, 23,5654.86
+withdrawal,326, 67, 65.4333
+deposit, 87, 446,4666.34
+dispute, 87,    446,
+resolve,87,446,""
+dispute, 326, 67    
+chargeback,326, 67
